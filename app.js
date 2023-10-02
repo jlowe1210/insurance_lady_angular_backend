@@ -11,7 +11,7 @@ app.use("/api/message", MessageRoutes);
 app.use("/api/consulation", ConsultationRoutes);
 
 app.get("/", (req, res) => {
-  return res.status(200).send("hello");
+  return res.status(200).json({ name: "justin" });
 });
 
 app.listen(3000 || process.env.PORT);
