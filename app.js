@@ -10,8 +10,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/message", MessageRoutes);
 app.use("/api/consulation", ConsultationRoutes);
 
-app.get("/", (req, res) => {
-  return res.status(200).json({ name: "justin" });
+app.use(express.static(path.join(__dirname, "dist")));
+
+app.use("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
+const PORT = process.env.PORT || 3000;
 app.listen(3000 || process.env.PORT);
