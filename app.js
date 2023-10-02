@@ -7,8 +7,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/api/message", MessageRoutes);
-app.use("/api/consulation", ConsultationRoutes);
+//app.use("/api/message", MessageRoutes);
+//app.use("/api/consulation", ConsultationRoutes);
 
 app.use(express.static(path.join(__dirname, "dist")));
 
