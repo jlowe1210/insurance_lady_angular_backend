@@ -10,10 +10,16 @@ app.use(express.urlencoded({ extended: false }));
 //app.use("/api/message", MessageRoutes);
 //app.use("/api/consulation", ConsultationRoutes);
 
+/*
 app.use(express.static(path.join(__dirname, "dist")));
 
 app.use("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
+*/
+
+app.get("/", (req, res) => {
+  res.status(200).send("test");
 });
 
 const PORT = process.env.PORT || 3000;
