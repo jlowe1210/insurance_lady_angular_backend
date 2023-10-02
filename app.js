@@ -11,6 +11,7 @@ app.use("/api/consulation", ConsultationRoutes);
 
 app.use(express.static(path.join(__dirname, "dist")));
 app.use("/*", (req, res) => {
+  console.log("test");
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
