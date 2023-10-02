@@ -3,10 +3,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/", (req, res) => {
-  res.status(200).send("testing");
+app.use(express.static(path.join(__dirname, "dist")));
+app.use("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
-const PORT = process.env.PORT || 4000;
+const PORT = 3000 || process.env.PORT;
 
 app.listen(PORT);
